@@ -1,0 +1,36 @@
+/* src/app/top-menu/top-menu.component.css */
+.top-menu {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.top-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.top-menu li {
+  display: inline;
+}
+
+.top-menu a,
+.top-menu button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-menu a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ff0;
+}
+
+.top-menu button:hover {
+  text-decoration: underline;
+}

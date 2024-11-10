@@ -2,12 +2,13 @@ import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HousingLocationsComponent} from "../housing-locations/housing-locations.component";
 import {HousingLocation} from '../housing-location';
-import {HousingService} from '../services/housing.service';
+import {HousingService} from '../services/housing-service/housing.service';
+import {TopMenuComponent} from '../menu/top-menu/top-menu.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationsComponent],
+  imports: [CommonModule, HousingLocationsComponent, TopMenuComponent],
   template: `
     <section>
       <form>
