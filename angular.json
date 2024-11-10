@@ -60,12 +60,16 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "myAssignment:build:production"
+              "buildTarget": "myAssignment:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
-              "buildTarget": "myAssignment:build:development"
+              "buildTarget": "myAssignment:build:development",
             }
           },
           "defaultConfiguration": "development"
@@ -76,6 +80,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "proxyConfig": "proxy.conf.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
