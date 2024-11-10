@@ -6,7 +6,7 @@ import {Product} from '../../products/product';
   providedIn: 'root'
 })
 export class ProductService {
-  url="https://dummyjson.com/products";
+  url="/api/products";
   protected productList: Product[] =[];
 
   constructor() {}

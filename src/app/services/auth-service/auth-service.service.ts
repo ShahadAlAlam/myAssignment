@@ -8,7 +8,8 @@ export class AuthService {
   private readonly tokenKey = 'auth_token';
 
   login(username: string, password: string): Promise<boolean> {
-    return fetch('https://dummyjson.com/auth/login', {
+    // return fetch('https://dummyjson.com/auth/login', {
+    return fetch('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
