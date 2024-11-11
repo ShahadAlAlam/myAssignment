@@ -12,10 +12,12 @@ import { CommonModule } from '@angular/common';
     <nav class="top-menu">
       <ul>
         <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/details/1" routerLinkActive="active">Details</a></li>
-        <li *ngIf="authService.isLoggedIn()">
-          <button (click)="logout()">Logout</button>
-        </li>
+        <li><a routerLink="/product" routerLinkActive="active">Products Home</a></li>
+        <ul>
+          <li *ngIf="authService.isLoggedIn()">
+            <button (click)="logout()">Logout</button>
+          </li>
+        </ul>
       </ul>
     </nav>
   `,
@@ -23,7 +25,6 @@ import { CommonModule } from '@angular/common';
 })
 export class TopMenuComponent {
   constructor(public authService: AuthService, private router: Router) {}
-
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);

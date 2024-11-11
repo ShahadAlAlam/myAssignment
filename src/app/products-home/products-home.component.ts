@@ -14,7 +14,7 @@ import {ProductDetailsComponent} from '../product-details/product-details.compon
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" #filter/>
+        <input type="text" placeholder="Filter by Product Title" #filter/>
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>

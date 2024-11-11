@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HousingLocation} from '../../housing-location';
 import {Product} from '../../products/product';
 import { HttpClient } from "@angular/common/http";
+import { Observer } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,17 @@ export class ProductService {
 
   constructor() {}
 
-  async getAllProducts() : Promise<any> {
-    const data = fetch(this.url);
-    const response = await data;
-    const finalData = await response.json() ?? [];
-    this.productList = finalData.products;
-    return this.productList;
-    // return this.housingLoscationList;
+  async getAllProducts() : Promise<Product[]> {
+    return fetch(this.url).then(resData => resData.json()).then(data =>  data.products).catch(err=> []);
   }
 
   async getProductById(id:number):Promise<Product>{
-    const data = fetch(`${this.url}/${id}`) ;
-    const response = await data;
-    console.log('response',response);
-    return await response.json() ?? {};
+    return fetch(`${this.url}/${id}`).then(resData => resData.json()) ;
 
+    // const data = fetch(`${this.url}/${id}`) ;
+    // const response = await data;
+    // console.log('response',response);
+    // return await response.json() ?? {};
     // return this.housingLoscationList.find(housingLocation => housingLocation.id===id);
   }
 

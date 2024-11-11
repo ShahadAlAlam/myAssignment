@@ -11,9 +11,9 @@ const routeConfig: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [authGuard], title: 'Home Page' },
-  { path: 'product', component: ProductsHomeComponent, canActivate: [authGuard], title: 'Products Page' },
   { path: 'details/:id', component: DetailsComponent, canActivate: [authGuard], title: 'Details' },
-  { path: 'product-descriotion/:id', component: ProductDescriotionComponent, canActivate: [authGuard], title: 'Details' },
+  { path: 'product', component: ProductsHomeComponent, canActivate: [authGuard], title: 'Products Page' },
+  { path: 'product-descriotion/:id', component: ProductDescriotionComponent, canActivate: [authGuard], title: 'Product Details' },
 ];
 
 export default routeConfig;
