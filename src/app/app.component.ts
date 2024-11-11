@@ -11,7 +11,7 @@ import { AuthService } from './services/auth-service/auth-service.service';
   template: `
     <main>
       <header class="brand-name">
-        <img class="brand-logo" src="/assets/logo.svg"
+        <img class="brand-logo" src="/assets/angular.svg"
              alt="logo" aria-hidden="true">
       </header>
       <app-top-menu *ngIf="authService.isLoggedIn()"></app-top-menu>
