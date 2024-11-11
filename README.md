@@ -1,6 +1,6 @@
 # MyAssignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This project is developed for Learning Angular and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
 
 ## Pre-Requisites
     1. json-server:
