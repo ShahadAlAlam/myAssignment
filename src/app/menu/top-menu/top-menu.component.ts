@@ -1,7 +1,6 @@
-// src/app/top-menu/top-menu.component.ts
 import { Component } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
-import {AuthService} from '../../services/auth-service/auth-service.service';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth-service/auth-service.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
