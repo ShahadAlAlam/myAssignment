@@ -38,9 +38,7 @@ export class ProductsHomeComponent {
     await this.productService.getAllProducts().then((productList: Product[]) => {
       this.productList = productList;
     });
-    console.log(this.productList)
     this.filteredProductList = this.productList;
-    console.log("filterProductList",this.filteredProductList);
   }
 
   filterResults(text: String) {

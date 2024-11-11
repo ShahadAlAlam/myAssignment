@@ -1,28 +1,30 @@
 import { Injectable } from '@angular/core';
 import {HousingLocation} from '../../housing-location';
 import {Product} from '../../products/product';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   url="/api/products";
-  protected productList: Product[] =[];
+  protected productList: any;
 
   constructor() {}
 
-  async getAllProducts() : Promise<Product[]> {
+  async getAllProducts() : Promise<any> {
     const data = fetch(this.url);
     const response = await data;
-    this.productList =await response.json() ?? [];
-    console.log("productList",this.productList);
+    const finalData = await response.json() ?? [];
+    this.productList = finalData.products;
     return this.productList;
     // return this.housingLoscationList;
   }
 
-  async getProductById(id:number):Promise<HousingLocation>{
+  async getProductById(id:number):Promise<Product>{
     const data = fetch(`${this.url}/${id}`) ;
     const response = await data;
+    console.log('response',response);
     return await response.json() ?? {};
 
     // return this.housingLoscationList.find(housingLocation => housingLocation.id===id);
